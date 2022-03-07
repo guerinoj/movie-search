@@ -3,22 +3,18 @@ document.querySelector("#send").addEventListener("click", async function () {
 
   let movieDOM = new Movie; 
   let response = await movieDOM.getMovies(search.value);
- 
-
 
   if (response.Response =="True") {
     let movies = response.Search;
+
+    movies.forEach(movie => {
+      container.appendChild(movieDOM.createDOM(movie));
+    });
+    
   } else {
     let div = document.createElement("div");
     div.classList = "alert alert-danger";
     div.textContent = response.Error;
     container.appendChild(div);
   }
-  
-  console.log(response.Search);
-
-  //container.appendChild(movieDOM);
- 
-
-  console.log(container);
 })

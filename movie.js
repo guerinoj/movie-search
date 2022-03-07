@@ -12,13 +12,19 @@ class Movie {
       return response
   }
 
-  createDOM(data) {
+  createDOM(movie) {
     let movieDOM = document.createElement("div");
     movieDOM.classList = "col-4"
 
     movieDOM.innerHTML = `
-    <h2>${data.title}</h2>
-    <p>${data.Plot}</p> `;
+    <figure>
+      <img src ="${movie.Poster}" alt="${movie.Title}">
+      <figcaption>
+        <h2>${movie.Title}</h2>
+        <p>${movie.Type} - ${movie.Year}</p> 
+      </figcaption>
+    </figure>
+    `;
 
     return movieDOM;
   }
