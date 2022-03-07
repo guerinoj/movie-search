@@ -14,11 +14,11 @@ class Movie {
 
   createDOM(movie) {
     let movieDOM = document.createElement("div");
-    movieDOM.classList = "col-4"
+    movieDOM.classList = "col col-md-6 col-lg-4"
 
     movieDOM.innerHTML = `
     <figure>
-      <img src ="${movie.Poster}" alt="${movie.Title}">
+      <img class="img-responsive" src ="${movie.Poster}" alt="${movie.Title}">
       <figcaption>
         <h2>${movie.Title}</h2>
         <p>${movie.Type} - ${movie.Year}</p> 
