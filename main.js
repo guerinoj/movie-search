@@ -1,10 +1,11 @@
 document.querySelector("#send").addEventListener("click", async function () {
   let container = document.querySelector("#movies_list");
-  console.log(search.value);
 
   let movieDOM = new Movie; 
-  let response = await movieDOM.getData(search.value);
+  let response = await movieDOM.getMovies(search.value);
  
+
+
   if (response.Response =="True") {
     let movies = response.Search;
   } else {
@@ -14,7 +15,7 @@ document.querySelector("#send").addEventListener("click", async function () {
     container.appendChild(div);
   }
   
-  console.log(movies);
+  console.log(response.Search);
 
   //container.appendChild(movieDOM);
  

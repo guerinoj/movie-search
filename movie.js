@@ -1,9 +1,9 @@
 class Movie {
 
-  async getData(search) {
+    getMovies(search) {
     let url = "http://www.omdbapi.com/?apikey=f6e256e1&s=" + search;
 
-    const response = await fetch(url)
+    const response =  fetch(url)
       .then(response => response.json())
       .then(data => {
         return data
