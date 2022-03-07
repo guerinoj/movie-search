@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", async function (e) {
     let container = document.querySelector("#movies_list");
     let movieDOM = new Movie;
     let search = urlParams.get('search');
+    document.querySelector("#search").value = search;
 
     // S'il y a une page alors je la récupère sinon par défaut je prends la première.
     page = (urlParams.has("page") ? urlParams.get('page') : 1)
