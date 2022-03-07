@@ -1,15 +1,15 @@
 class Movie {
 
-    getMovies(search) {
-    let url = "http://www.omdbapi.com/?apikey=f6e256e1&s=" + search;
+  getMovies(search, page = 1) {
+    let url = "http://www.omdbapi.com/?apikey=f6e256e1&s=" + search + "&page=" + page;
 
-    const response =  fetch(url)
+    const response = fetch(url)
       .then(response => response.json())
       .then(data => {
         return data
       })
-    
-      return response
+
+    return response
   }
 
   createDOM(movie) {
